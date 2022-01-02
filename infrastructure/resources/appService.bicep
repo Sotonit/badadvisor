@@ -3,6 +3,7 @@
   'prod'
 ])
 param environment string
+param webAppName string = uniqueString(resourceGroup().id)
 
 var planName = 'plan-badadvisor-${environment}'
 var webSiteName = toLower('wapp-${webAppName}')
