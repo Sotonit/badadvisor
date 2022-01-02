@@ -5,6 +5,7 @@
 param environment string
 
 var planName = 'plan-badadvisor-${environment}'
+var webSiteName = toLower('wapp-${webAppName}')
 
 resource plan 'Microsoft.Web/serverfarms@2021-02-01' = {
   name: planName
@@ -21,5 +22,12 @@ resource plan 'Microsoft.Web/serverfarms@2021-02-01' = {
 }
 
 resource appservice 'Microsoft.Web/sites@2021-02-01' = {
-
+  name: webSiteName
+  location: resourceGroup().location
+  properties: {
+    serverFarmId: plan.id
+    siteConfig: {
+      linuxFxVersion: linuxFxVersion
+    }
+  }
 }
