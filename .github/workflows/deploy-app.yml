@@ -19,23 +19,23 @@ jobs:
       - uses: azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-          
+     
       - name: Set up .NET Version
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
-          
+
       - name: Build with dotnet
         run: dotnet build ${{env.PROJECT_PATH}} --configuration Release
-          
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
-        with:
-          name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
 
       - name: dotnet publish
         run: dotnet publish ${{env.PROJECT_PATH}} -c Release -o ${{env.DOTNET_ROOT}}/myapp
+
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
+        with:
+            name: .net-app
+            path: ${{env.DOTNET_ROOT}}/myapp
 
 
   deploy:
