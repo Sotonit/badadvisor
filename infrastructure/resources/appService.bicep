@@ -30,7 +30,10 @@ resource appService 'Microsoft.Web/sites@2021-02-01' = {
     enabled: true
     siteConfig: {
       netFrameworkVersion: 'v5.0'
+      vnetName: vnetName
+      vnetRouteAllEnabled: true
     }
+    virtualNetworkSubnetId: subnetId
   }
   identity: {
     type: 'SystemAssigned'
