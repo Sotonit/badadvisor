@@ -6,6 +6,7 @@ module storageAccount 'resources/storageAccount.bicep' = {
   params: {
     environment: environment
     subnetId: VNet.outputs.subnetId
+    vnetName: VNet.name
   }
 }
 
