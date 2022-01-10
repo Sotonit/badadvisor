@@ -6,7 +6,6 @@ module storageAccount 'resources/storageAccount.bicep' = {
   params: {
     environment: environment
     subnetId: VNet.outputs.subnetId
-    vnetName: VNet.name
   }
 }
 
@@ -14,6 +13,8 @@ module appService 'resources/appService.bicep' = {
   name: 'appService-deployment'
   params: {
     environment: environment
+    subnetId: VNet.outputs.subnetId
+    vnetName: VNet.name
   }
 }
 
