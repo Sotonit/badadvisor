@@ -4,6 +4,8 @@
 ])
 param environment string
 param webAppName string = uniqueString(resourceGroup().id)
+param vnetName string
+param subnetId string
 
 var planName = 'plan-badadvisor-${environment}'
 var webSiteName = toLower('wapp-${webAppName}')
