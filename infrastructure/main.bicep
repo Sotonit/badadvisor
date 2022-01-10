@@ -1,4 +1,5 @@
-param environment string 
+param environment string
+param resourcePostfix string 
 
 module storageAccount 'resources/storageAccount.bicep' = {
   name: 'storageAccount-deployment'
@@ -18,5 +19,6 @@ module VNet 'resources/vnet.bicep' = {
   name: 'vnet-deployment'
   params: {
     environment: environment
+    resourcePostfix: resourcePostfix
   }
 }
