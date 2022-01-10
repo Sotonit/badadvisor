@@ -5,8 +5,8 @@
 param environment string
 param resourcePostfix string
 
-var vNetCIDR = 'replace with CIDR'
-var appServiceSubnetCIDR = 'replace with CIDR'
+var vNetCIDR = '10.0.0.0/24'
+var appServiceSubnetCIDR = '10.0.0.0/24'
 
 resource virtualNetwork 'Microsoft.Network/virtualNetworks@2021-03-01' = {
   name: 'vnet-badadvisor-${environment}-${resourcePostfix}'
