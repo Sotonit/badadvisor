@@ -13,3 +13,10 @@ module appService 'resources/appService.bicep' = {
     environment: environment
   }
 }
+
+module VNet 'resources/vnet.bicep' = {
+  name: 'vnet-deployment'
+  params: {
+    environment: environment
+  }
+}
