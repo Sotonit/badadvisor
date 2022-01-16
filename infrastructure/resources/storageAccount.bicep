@@ -7,7 +7,7 @@ param subnetId string
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2021-06-01' = {
   name: 'sagleb${environment}'
-  location: 'eastus'
+  location: 'westus'
   sku: {
     name: 'Standard_LRS'
   }
