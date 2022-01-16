@@ -3,19 +3,19 @@
   'prod'
 ])
 param environment string
-param webAppName string = uniqueString(resourceGroup().id)
+param resourcePostfix string
 param vnetName string
 param subnetId string
 
 var planName = 'plan-badadvisor-${environment}'
-var webSiteName = toLower('wapp-${webAppName}')
+var webSiteName = toLower('wapp-badadviser-${resourcePostfix}-${environment}')
 
 resource plan 'Microsoft.Web/serverfarms@2021-02-01' = {
   name: planName
   location: resourceGroup().location
   sku: {
-    tier: 'Free'
-    name: 'F1'
+    tier: 'Standart'
+    name: 'S1'
   }
   kind: 'linux'
   properties: {
