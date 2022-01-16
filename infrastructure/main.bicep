@@ -21,6 +21,7 @@ module appService 'resources/appService.bicep' = {
   name: 'appService-deployment'
   params: {
     environment: environment
+    resourcePostfix: resourcePostfix
     subnetId: VNet.outputs.subnetId
     vnetName: VNet.name
   }
