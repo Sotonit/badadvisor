@@ -8,7 +8,7 @@ param vnetName string
 param subnetId string
 
 var planName = 'plan-badadvisor-${environment}'
-var webSiteName = toLower('wapp-badadviser-${resourcePostfix}-${environment}')
+var webSiteName = toLower('wapp-badadviser-${environment}-${resourcePostfix}')
 
 resource plan 'Microsoft.Web/serverfarms@2021-02-01' = {
   name: planName
