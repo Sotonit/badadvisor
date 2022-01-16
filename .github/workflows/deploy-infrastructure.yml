@@ -13,7 +13,7 @@ jobs:
         uses: azure/arm-deploy@v1
         with:
           subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-          resourceGroupName: rg-badadvisor-dev
+          resourceGroupName: rg-badadvisor-dev-gp
           template: ./infrastructure/main.bicep
           parameters: environment=dev resourcePostfix=gp
           failOnStdErr: false
